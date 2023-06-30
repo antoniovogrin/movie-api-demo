@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "344aa60e-1659-4b17-a1e4-567b113542ce",
+		"name": "movie_app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19188391"
+	},
+	"item": [
+		{
+			"name": "GetAllMovies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{rootUrl}}/api/v1/movies?page&sort=&limit&search=",
+					"host": [
+						"{{rootUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"movies"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": null
+						},
+						{
+							"key": "sort",
+							"value": ""
+						},
+						{
+							"key": "limit",
+							"value": null
+						},
+						{
+							"key": "search",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMovieById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{rootUrl}}/api/v1/movies/649ead02f8a0894ddb473018",
+					"host": [
+						"{{rootUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"movies",
+						"649ead02f8a0894ddb473018"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteMovieById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{rootUrl}}/api/v1/movies/delete/649ec5c51a9b78439a0f87d7",
+					"host": [
+						"{{rootUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"movies",
+						"delete",
+						"649ec5c51a9b78439a0f87d7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateMovie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rank\": 1,\r\n    \"title\": \"The Shawshank Redemption\",\r\n    \"plot\": \"Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.\",\r\n    \"genres\": [\r\n        \"Crime\",\r\n        \"Drama\"\r\n    ],\r\n    \"year\": 1994,\r\n    \"avatar\": \"http://ia.media-imdb.com/images/M/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_SX300.jpg\",\r\n    \"director\": \"Frank Darabont\",\r\n    \"writer\": \"Stephen King, Frank Darabont\",\r\n    \"imdbRating\": 9.3,\r\n    \"actors\": [\r\n        \"Tim Robbins\",\r\n        \"Morgan Freeman\",\r\n        \"Bob Gunton\",\r\n        \"William Sadler\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{rootUrl}}/api/v1/movies/create",
+					"host": [
+						"{{rootUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"movies",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateMovie",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"rank\": 2,\r\n        \"title\": \"The Godfather\",\r\n        \"plot\": \"The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.\",\r\n        \"genres\": [\r\n            \"Crime\",\r\n            \"Drama\"\r\n        ],\r\n        \"year\": 1972,\r\n        \"avatar\": \"http://ia.media-imdb.com/images/M/MV5BMjEyMjcyNDI4MF5BMl5BanBnXkFtZTcwMDA5Mzg3OA@@._V1_SX300.jpg\",\r\n        \"director\": \"Francis Ford Coppola\",\r\n        \"writer\": \"Mario Puzo, Francis Ford Coppola\",\r\n        \"imdbRating\": 9.2,\r\n        \"actors\": [\r\n            \"Marlon Brando\",\r\n            \"Al Pacino\",\r\n            \"James Caan\",\r\n            \"Diane Keaton\"\r\n        ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{rootUrl}}/api/v1/movies/update/649e9d87c3b74630dd5cc4a7",
+					"host": [
+						"{{rootUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"movies",
+						"update",
+						"649e9d87c3b74630dd5cc4a7"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{password}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{username}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "username",
+			"value": "admin",
+			"type": "string"
+		},
+		{
+			"key": "password",
+			"value": "IWantAccess123!",
+			"type": "string"
+		},
+		{
+			"key": "rootUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
