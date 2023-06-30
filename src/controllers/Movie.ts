@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import mongoose from "mongoose";
 import Movie from "../models/Movie";
-import { MovieItemResponse as MovieListItemResponse } from "../objects/response";
+import { MovieItemResponse } from "../objects/response";
 
 interface GetAllMoviesQueryParams {
   limit?: number;
@@ -10,7 +10,7 @@ interface GetAllMoviesQueryParams {
   sort?: string;
 }
 
-const getAllMovies = (req: Request, res: Response<MovieListItemResponse[]>) => {
+const getAllMovies = (req: Request, res: Response<MovieItemResponse[]>) => {
   const queryParams: GetAllMoviesQueryParams = req.query;
 
   const page = queryParams.page ? queryParams.page - 1 ?? 0 : 0;
@@ -23,7 +23,7 @@ const getAllMovies = (req: Request, res: Response<MovieListItemResponse[]>) => {
     .limit(limit)
     .sort(sort)
     .then((movies) => {
-      const response: MovieListItemResponse[] = movies.map((it) => {
+      const response: MovieItemResponse[] = movies.map((it) => {
         return {
           id: it.id,
           title: it.title,
